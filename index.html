@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f5">
+<title>A Little Date? ♡</title>
+<style>
+:root{--pink:#f4a8c5;--rose:#d85f91;--ink:#493342;--cream:#fff9f5;--lilac:#e9e1ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at top left,#ffe3ee,transparent 42%),linear-gradient(135deg,#fff8f3,#f7efff);display:grid;place-items:center;padding:22px;overflow-x:hidden}
+.card{width:min(100%,520px);background:#ffffffd9;border:1px solid #fff;box-shadow:0 20px 60px #a85c8020;border-radius:28px;padding:clamp(24px,6vw,42px);text-align:center;position:relative;backdrop-filter:blur(8px)}
+.badge{display:inline-block;border-radius:999px;padding:7px 12px;background:#fff0f6;color:#b74e7a;font-size:.8rem;letter-spacing:.04em}
+h1{font-size:clamp(2rem,8vw,3.2rem);line-height:1.08;margin:20px 0 12px}
+p{line-height:1.7;color:#725a69}
+.heart{font-size:3rem;display:inline-block;animation:float 2.2s ease-in-out infinite}
+button{border:0;border-radius:999px;padding:13px 20px;font-weight:750;font-size:1rem;cursor:pointer;transition:transform .15s,filter .15s;margin:6px}
+button:hover{transform:translateY(-2px);filter:brightness(1.02)}
+.primary{background:var(--rose);color:white;box-shadow:0 8px 18px #d85f9130}
+.secondary{background:#fff0f6;color:#a34570;border:1px solid #f6c9dc}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.hidden{display:none!important}
+.note{background:#fff9fc;border:1px dashed #e9a7c4;border-radius:18px;padding:20px;text-align:left;margin:20px 0}
+.note p{margin:8px 0}
+.tiny{font-size:.84rem;color:#9a7d8d}
+.sparkle{position:fixed;pointer-events:none;opacity:.7;animation:drift 8s linear infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-8px) rotate(5deg)}}
+@keyframes drift{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-15vh) rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sparkle" style="left:8%;font-size:24px;animation-delay:-2s">♡</div>
+<div class="sparkle" style="left:87%;font-size:20px;animation-delay:-5s">✦</div>
+<main class="card">
+  <section id="start">
+    <span class="badge">A tiny surprise for you</span>
+    <div class="heart">💗</div>
+    <h1>Hi, Winterbee!</h1>
+    <p>Ada sesuatu kecil yang pengen aku tunjukin ke kamu.<br>Siap buka? 🐝</p>
+    <button class="primary" onclick="show('letter')">Open your surprise 💌</button>
+  </section>
+
+  <section id="letter" class="hidden">
+    <span class="badge">A little note from me</span>
+    <h1>For my favorite person ♡</h1>
+    <div class="note">
+      <p>Sayang, aku cuma lagi pengen menghabiskan waktu sama kamu.</p>
+      <p>Pengen ngobrol, ketawa bareng, nonton sesuatu, dan dengerin cerita kamu. Nggak harus ngapa-ngapain yang mewah—aku cuma seneng kalau bisa punya waktu berdua sama kamu. ❤️</p>
+      <p class="tiny">P.S. Semoga kaki kamu udah lebih enakan, ya. Kalau masih sakit, kita bisa atur waktu lain. Jangan dipaksain. 🫶</p>
+    </div>
+    <button class="primary" onclick="show('invite')">One little question… →</button>
+  </section>
+
+  <section id="invite" class="hidden">
+    <div class="heart">🌷</div>
+    <span class="badge">Our tiny date</span>
+    <h1>Will you have a little date with me tonight?</h1>
+    <p>Rencana kecil: camilan, movie time, deep talk, dan quality time bareng. Kalau kamu ada waktu dan lagi nyaman, tentunya. 💕</p>
+    <div class="actions">
+      <button class="primary" onclick="show('yes')">YES, LET'S GO! 💗</button>
+      <button class="secondary" onclick="show('plan')">Tell me the plan 🐝</button>
+    </div>
+    <p class="tiny">Kamu boleh bilang iya, pilih waktu lain, atau bilang belum bisa—no pressure. ♡</p>
+  </section>
+
+  <section id="yes" class="hidden">
+    <div class="heart">🥹💖</div>
+    <h1>YAYYY!</h1>
+    <p>Aku seneng bisa punya waktu sama kamu, sayang. Kita konfirmasi waktunya lewat chat, ya. See you when you're ready! 🫶</p>
+    <button class="secondary" onclick="show('start')">Replay ♡</button>
+  </section>
+
+  <section id="plan" class="hidden">
+    <div class="heart">🍿</div>
+    <h1>The plan is simple</h1>
+    <div class="note">
+      <p>🍿 Nonton sesuatu yang kita suka</p>
+      <p>🍫 Camilan dan minuman</p>
+      <p>💬 Cerita apa aja, serius maupun receh</p>
+      <p>🫂 Pelukan kalau kita sama-sama pengen</p>
+    </div>
+    <p>Kalau malam ini kurang cocok atau kaki kamu masih sakit, kita cari waktu yang lebih nyaman aja. Yang penting kamu nyaman. ❤️</p>
+    <div class="actions">
+      <button class="primary" onclick="show('yes')">Sounds good! 💗</button>
+      <button class="secondary" onclick="show('invite')">Back</button>
+    </div>
+  </section>
+  <footer class="tiny" style="margin-top:26px">made with ♡, just for you</footer>
+</main>
+<script>
+function show(id){
+  document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
